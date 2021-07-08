@@ -10,6 +10,7 @@ export default () => {
       try {
         const response = await fetch("/api/items");
         const result = await response.json();
+        console.log(result);
         setItems(result.items);
       } catch (error) {
         console.log("Error: ", error); // would usually handle rather than just logging
@@ -37,7 +38,7 @@ export default () => {
       </div>
       <div className="container menu-builder">
         <div className="row">
-          <Sidebar />
+          <Sidebar items={items} />
           <div className="col-8">
             <h2>Menu preview</h2>
             <ul className="menu-preview">
