@@ -5,6 +5,7 @@ import Sidebar from "./components/Sidebar";
 
 export default () => {
   const [items, setItems] = useState([]);
+  const [selectedItems, setSelectedItems] = useState([]);
 
   useEffect(() => {
     const fetchItems = async () => {
@@ -20,6 +21,10 @@ export default () => {
 
     fetchItems();
   }, []);
+
+  const addItemToMenu = (item) => {
+    setSelectedItems([...selectedItems, item]);
+  };
 
   return (
     <div className="wrapper">
@@ -39,7 +44,7 @@ export default () => {
       </div>
       <div className="container menu-builder">
         <div className="row">
-          <Sidebar items={items} />
+          <Sidebar items={items} addItemToMenu={addItemToMenu} />
           <MenuPreview />
         </div>
       </div>
