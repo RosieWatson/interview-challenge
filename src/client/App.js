@@ -42,6 +42,16 @@ export default () => {
     setDietaryNumbers(dietNumbers);
   }, [selectedItems]);
 
+  const searchForItem = async (searchTerm) => {
+    try {
+      const response = await fetch(`/api/itemSearch?searchTerm=${searchTerm}`);
+      const result = await response.json();
+      setItems(result.items);
+    } catch (error) {
+      console.log("Error: ", error); // would usually handle rather than just logging
+    }
+  };
+
   const addItemToMenu = (item) => {
     if (selectedItems.includes(item.id)) return;
     setSelectedItems([...selectedItems, item.id]);
@@ -81,7 +91,11 @@ export default () => {
       </div>
       <div className="container menu-builder">
         <div className="row">
-          <Sidebar items={items} addItemToMenu={addItemToMenu} />
+          <Sidebar
+            items={items}
+            addItemToMenu={addItemToMenu}
+            searchForItem={searchForItem}
+          />
           <MenuPreview
             items={items}
             selectedItems={selectedItems}
