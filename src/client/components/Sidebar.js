@@ -8,7 +8,7 @@ const Sidebar = ({ items, addItemToMenu }) => (
     </div>
     <ul className="item-picker">
       {items.map((item) => {
-        const addItem = () => addItemToMenu(item.id);
+        const addItem = () => addItemToMenu(item);
         return (
           <MenuItem
             item={item}
