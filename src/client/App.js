@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
+import MenuPreview from "./components/MenuPreview";
 import Sidebar from "./components/Sidebar";
 
 export default () => {
@@ -39,47 +40,7 @@ export default () => {
       <div className="container menu-builder">
         <div className="row">
           <Sidebar items={items} />
-          <div className="col-8">
-            <h2>Menu preview</h2>
-            <ul className="menu-preview">
-              <li className="item">
-                <h2>Dummy item</h2>
-                <p>
-                  <span className="dietary">ve</span>
-                  <span className="dietary">v</span>
-                  <span className="dietary">n!</span>
-                </p>
-                <button className="remove-item">x</button>
-              </li>
-              <li className="item">
-                <h2>Dummy item</h2>
-                <p>
-                  <span className="dietary">ve</span>
-                  <span className="dietary">v</span>
-                  <span className="dietary">n!</span>
-                </p>
-                <button className="remove-item">x</button>
-              </li>
-              <li className="item">
-                <h2>Dummy item</h2>
-                <p>
-                  <span className="dietary">ve</span>
-                  <span className="dietary">v</span>
-                  <span className="dietary">n!</span>
-                </p>
-                <button className="remove-item">x</button>
-              </li>
-              <li className="item">
-                <h2>Dummy item</h2>
-                <p>
-                  <span className="dietary">ve</span>
-                  <span className="dietary">v</span>
-                  <span className="dietary">n!</span>
-                </p>
-                <button className="remove-item">x</button>
-              </li>
-            </ul>
-          </div>
+          <MenuPreview />
         </div>
       </div>
     </div>
