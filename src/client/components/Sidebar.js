@@ -1,4 +1,5 @@
 import React from "react";
+import MenuItem from "./MenuItem";
 
 const Sidebar = ({ items, addItemToMenu }) => (
   <div className="col-4">
@@ -9,16 +10,12 @@ const Sidebar = ({ items, addItemToMenu }) => (
       {items.map((item) => {
         const addItem = () => addItemToMenu(item.id);
         return (
-          <li className="item" key={item.id} onClick={addItem}>
-            <h2>{item.name}</h2>
-            <p>
-              {item.dietaries.map((diet) => (
-                <span className="dietary" key={diet}>
-                  {diet}
-                </span>
-              ))}
-            </p>
-          </li>
+          <MenuItem
+            item={item}
+            canRemove={false}
+            onClick={addItem}
+            key={item.id}
+          />
         );
       })}
     </ul>
