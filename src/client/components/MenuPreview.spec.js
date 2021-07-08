@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  findByText,
-  fireEvent,
-  render,
-  screen,
-  waitForElementToBeRemoved,
-} from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 
 import MenuPreview from "./MenuPreview";
 
@@ -47,7 +41,7 @@ describe("MenuPreview", () => {
   });
 
   describe("when the remove button is pressed", () => {
-    it("removes the item from the list", async () => {
+    it("removes the item from the list", () => {
       fireEvent.click(screen.getAllByRole("button")[0]);
 
       expect(onRemoveClickMock).toHaveBeenCalled();
