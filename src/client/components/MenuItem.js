@@ -1,6 +1,6 @@
 import React from "react";
 
-const MenuItem = ({ item, canRemove, onClick }) => (
+const MenuItem = ({ item, canRemove, onClick, removeOnClick }) => (
   <li className="item" onClick={onClick}>
     <h2>{item.name}</h2>
     <p>
@@ -10,7 +10,11 @@ const MenuItem = ({ item, canRemove, onClick }) => (
         </span>
       ))}
     </p>
-    {canRemove && <button className="remove-item">x</button>}
+    {canRemove && (
+      <button className="remove-item" onClick={removeOnClick} type="button">
+        x
+      </button>
+    )}
   </li>
 );
 

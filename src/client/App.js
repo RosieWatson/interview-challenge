@@ -27,6 +27,16 @@ export default () => {
     setSelectedItems([...selectedItems, item]);
   };
 
+  const removeItemFromMenu = (item) => {
+    const itemIndex = selectedItems.indexOf(item);
+
+    if (itemIndex > -1) {
+      const newItems = [...selectedItems];
+      newItems.splice(itemIndex, 1);
+      setSelectedItems(newItems);
+    }
+  };
+
   return (
     <div className="wrapper">
       <div className="menu-summary">
@@ -46,7 +56,11 @@ export default () => {
       <div className="container menu-builder">
         <div className="row">
           <Sidebar items={items} addItemToMenu={addItemToMenu} />
-          <MenuPreview items={items} selectedItems={selectedItems} />
+          <MenuPreview
+            items={items}
+            selectedItems={selectedItems}
+            removeItem={removeItemFromMenu}
+          />
         </div>
       </div>
     </div>
