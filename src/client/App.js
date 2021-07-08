@@ -43,7 +43,7 @@ export default () => {
         <div className="container">
           <div className="row">
             <div className="col-6 menu-summary-left">
-              <span>6 items</span>
+              <span>{selectedItems.length} items</span>
             </div>
             <div className="col-6 menu-summary-right">
               6x <span className="dietary">ve</span>
