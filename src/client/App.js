@@ -23,6 +23,7 @@ export default () => {
   }, []);
 
   const addItemToMenu = (item) => {
+    if (selectedItems.includes(item)) return;
     setSelectedItems([...selectedItems, item]);
   };
 
@@ -45,7 +46,7 @@ export default () => {
       <div className="container menu-builder">
         <div className="row">
           <Sidebar items={items} addItemToMenu={addItemToMenu} />
-          <MenuPreview />
+          <MenuPreview items={items} selectedItems={selectedItems} />
         </div>
       </div>
     </div>
