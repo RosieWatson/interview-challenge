@@ -1,8 +1,24 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
 import Sidebar from "./components/Sidebar";
 
 export default () => {
+  const [items, setItems] = useState([]);
+
+  useEffect(() => {
+    const fetchItems = async () => {
+      try {
+        const response = await fetch("/api/items");
+        const result = await response.json();
+        setItems(result.items);
+      } catch (error) {
+        console.log("Error: ", error); // would usually handle rather than just logging
+      }
+    };
+
+    fetchItems();
+  }, []);
+
   return (
     <div className="wrapper">
       <div className="menu-summary">
