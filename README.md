@@ -4,6 +4,7 @@
 - If I had more time I would have broken down the file structure more to have made it easier to read and also increase the read-ability of some of the functions and components
 - If this wasn't a short task and a real project I would have looked at using redux and storing the items in local storage rather than using component state that will disappear on refresh
 - I would also have added in error states to handle the situation where the api doesn't respond
+- I would also have created an endpoint that returns the different dietary requirements so that it is not a hardcoded list
 
 # Feedr Technical Challenge
 
